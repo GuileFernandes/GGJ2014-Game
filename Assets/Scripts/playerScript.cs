@@ -54,9 +54,9 @@ public class playerScript : MonoBehaviour {
 		
 		if (Input.GetKeyDown (KeyCode.Space) && groundDetector_script.isGrounded) {
 			Debug.Log("Pulou");
+			rigidbody2D.AddForce (new Vector2 (0, 100000f));
 			anim.SetBool("noChao", false);
 			anim.SetBool("Pulou", true);
-			rigidbody2D.AddForce (new Vector2 (0, 10000f));
 		}
 
 	}
