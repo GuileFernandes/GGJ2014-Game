@@ -35,6 +35,13 @@ public class playerScript : MonoBehaviour {
 		movement = new Vector2 (speed.x * inputX,0);
 		anim.SetFloat("Velocidade", Mathf.Abs(speed.x * inputX) );
 
+		if( Input.GetKeyDown( KeyCode.LeftShift ) && inputX != 0 ){
+			speed.x = 11;
+		}
+		if( Input.GetKeyUp( KeyCode.LeftShift ) ){
+			speed.x = 5;
+		}
+
 		if (inputX > 0 && !facingRight){
 			Flip();
 		}
@@ -49,12 +56,13 @@ public class playerScript : MonoBehaviour {
 			Debug.Log("Pulou");
 			anim.SetBool("noChao", false);
 			anim.SetBool("Pulou", true);
-			rigidbody2D.AddForce (new Vector2 (0, 1000f));
+			rigidbody2D.AddForce (new Vector2 (0, 10000f));
 		}
 
 	}
 
 	void FixedUpdate(){
+		anim.SetFloat( "VelocidadeV", rigidbody2D.velocity.y );
 		rigidbody2D.velocity = new Vector2 (movement.x, rigidbody2D.velocity.y);
 	}
 	
