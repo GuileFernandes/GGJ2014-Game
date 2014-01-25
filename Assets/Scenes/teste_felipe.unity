@@ -323,6 +323,7 @@ GameObject:
   - 212: {fileID: 1353389136}
   - 61: {fileID: 1353389135}
   - 50: {fileID: 1353389134}
+  - 114: {fileID: 1353389138}
   m_Layer: 0
   m_Name: dragao
   m_TagString: Untagged
@@ -389,7 +390,19 @@ Transform:
   m_LocalPosition: {x: -8.67855167, y: -1.40039682, z: 0}
   m_LocalScale: {x: .300000012, y: .300000012, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1767608260}
+--- !u!114 &1353389138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353389133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2067789aec8d8e5488ebca20bdc3f0d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: {x: 0, y: 0}
 --- !u!1 &1552342354
 GameObject:
   m_ObjectHideFlags: 0
@@ -522,6 +535,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 502334687}
+  - {fileID: 1353389137}
   m_Father: {fileID: 430992532}
 --- !u!1 &1771463830
 GameObject:
