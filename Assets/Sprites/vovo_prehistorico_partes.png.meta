@@ -1,0 +1,229 @@
+fileFormatVersion: 2
+guid: dd897cb2899276f45a4bfe988a1ab670
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: vovo_prehistorico_partes_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 426
+        width: 194
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 538
+        width: 8
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_2
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 484
+        width: 105
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_3
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 438
+        width: 46
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_4
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 445
+        width: 32
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_5
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 433
+        width: 65
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_6
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 317
+        width: 33
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_7
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 320
+        width: 40
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_8
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 248
+        width: 114
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_9
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 263
+        width: 21
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_10
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 261
+        width: 62
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_11
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 226
+        width: 49
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_12
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 180
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_13
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 163
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_14
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 169
+        width: 51
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_15
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 133
+        width: 124
+        height: 59
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_16
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 68
+        width: 35
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_17
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 84
+        width: 35
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_18
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 37
+        width: 53
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+    - name: vovo_prehistorico_partes_19
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 37
+        width: 52
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+  spritePackingTag: 
+  userData: 
