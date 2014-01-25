@@ -24,7 +24,7 @@ public class playerScript : MonoBehaviour {
 
 	void Update () {
 		float inputX = Input.GetAxis("Horizontal");
-		float inputY = Input.GetAxis("Vertical");
+//		float inputY = Input.GetAxis("Vertical");
 
 		movement = new Vector2 (speed.x * inputX,0);
 
@@ -34,29 +34,9 @@ public class playerScript : MonoBehaviour {
 		if (inputX < 0)
 			this.transform.rotation = new Quaternion (0, 180, 0, 0);
 		
-		//		this.transform.Translate (new Vector3(movement.x, 0, 0));
-
 		if (Input.GetKeyDown (KeyCode.Space) && groundDetector_script.isGrounded) {
-			rigidbody2D.AddForce(new Vector2(0, 600f));
-//			SPulo = true;
-//			transform.Translate (0, 5f, 0);
-			//podePulo = true;
-		}
-
-/*		if (SPulo == true && tempoPulo <= tempoLimitePulo && podePulo == true) {
-						transform.Translate (0, velocidadePulo, 0);
-						tempoPulo += Time.deltaTime;
-		}
-
-/*		if (tempoPulo > tempoLimitePulo) {
-			SPulo = false;
-			podePulo = false;
-		}
-
-		if (Input.GetKeyUp (KeyCode.Space)) {
-			SPulo = false;
-		}
-*/
+						rigidbody2D.AddForce (new Vector2 (0, 600f));
+				}
 
 	}
 
