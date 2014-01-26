@@ -34,14 +34,16 @@ public class playerScript : MonoBehaviour {
 
 	void Update () {
 
-		if ( groundDetector_script.isGrounded && Input.GetKeyDown (KeyCode.Space) ) {
+		if ( ( groundDetector_script.isGrounded || !duploPulo ) && Input.GetKeyDown (KeyCode.Space) ) {
 			Debug.Log("Pulou");
 			anim.SetBool("noChao", false);
 			anim.SetBool("Pulou", true);
 			rigidbody2D.AddForce ( new Vector2 (0, forcaPulo));
 
-			if( !duploPulo && !groundDetector_script.isGrounded )
-				duploPulo = true;
+			if( !duploPulo && !groundDetector_script.isGrounded ){
+				anim.SetBool("PuloDuplo", true);
+				duploPulo = true;				
+			}
 		}
 
 	}
@@ -51,7 +53,8 @@ public class playerScript : MonoBehaviour {
 		float inputX = Input.GetAxis("Horizontal");
 		//		float inputY = Input.GetAxis("Vertical");
 
-		if( groundDetector_script.isGrounded )
+		if( groundDetector_script.isGrounded || duploPulo )
+			anim.SetBool("PuloDuplo", false);
 			duploPulo = false;
 		
 		if( Input.GetKeyDown( KeyCode.LeftShift ) && inputX != 0 ){
