@@ -686,7 +686,23 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 5000000, guid: 3c3f1cd2f153dfc49a681a730b994624, type: 2}
       propertyPath: m_GravityScale
-      value: 10
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 3c3f1cd2f153dfc49a681a730b994624, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: 3c3f1cd2f153dfc49a681a730b994624, type: 2}
+      propertyPath: m_FixedAngle
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 3c3f1cd2f153dfc49a681a730b994624, type: 2}
+      propertyPath: m_AnimatePhysics
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: 3c3f1cd2f153dfc49a681a730b994624, type: 2}
+      propertyPath: m_ApplyRootMotion
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3c3f1cd2f153dfc49a681a730b994624, type: 2}
@@ -901,8 +917,8 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 0d703a9d257e62347a20dc29e80e0d2b, type: 2}
   m_CullingMode: 0
-  m_ApplyRootMotion: 1
-  m_AnimatePhysics: 0
+  m_ApplyRootMotion: 0
+  m_AnimatePhysics: 1
   m_HasTransformHierarchy: 1
 --- !u!61 &1022915510
 BoxCollider2D:
@@ -926,7 +942,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: .0500000007
-  m_GravityScale: 10
+  m_GravityScale: 1
   m_FixedAngle: 1
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -949,6 +965,7 @@ MonoBehaviour:
   tempoPulo: 0
   tempoLimitePulo: 0
   podePulo: 0
+  forcaPulo: 700
   groundDetector: {fileID: 1499951189}
 --- !u!1 &1157715529
 GameObject:

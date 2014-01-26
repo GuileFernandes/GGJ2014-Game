@@ -10,6 +10,10 @@ public class playerScript : MonoBehaviour {
 	public bool podePulo;
 	private Vector2 movement;
 
+
+	public float forcaPulo = 700f;
+	private bool duploPulo = false;
+
 	private bool facingRight = true;
 
 	private Animator anim;
@@ -29,39 +33,45 @@ public class playerScript : MonoBehaviour {
 	
 
 	void Update () {
+
+		if ( groundDetector_script.isGrounded && Input.GetKeyDown (KeyCode.Space) ) {
+			Debug.Log("Pulou");
+			anim.SetBool("noChao", false);
+			anim.SetBool("Pulou", true);
+			rigidbody2D.AddForce ( new Vector2 (0, forcaPulo));
+
+			if( !duploPulo && !groundDetector_script.isGrounded )
+				duploPulo = true;
+		}
+
+	}
+
+	void FixedUpdate(){
+
 		float inputX = Input.GetAxis("Horizontal");
-//		float inputY = Input.GetAxis("Vertical");
+		//		float inputY = Input.GetAxis("Vertical");
 
-		movement = new Vector2 (speed.x * inputX,0);
-		anim.SetFloat("Velocidade", Mathf.Abs(speed.x * inputX) );
-
+		if( groundDetector_script.isGrounded )
+			duploPulo = false;
+		
 		if( Input.GetKeyDown( KeyCode.LeftShift ) && inputX != 0 ){
 			speed.x = 11;
 		}
 		if( Input.GetKeyUp( KeyCode.LeftShift ) ){
 			speed.x = 5;
 		}
-
+		
 		if (inputX > 0 && !facingRight){
 			Flip();
 		}
-//			this.transform.rotation = new Quaternion (0, 0, 0, 0);
 
 		if (inputX < 0 && facingRight){
 			Flip();
 		}
-//			this.transform.rotation = new Quaternion (0, 180, 0, 0);
-		
-		if (Input.GetKeyDown (KeyCode.Space) && groundDetector_script.isGrounded) {
-			Debug.Log("Pulou");
-			rigidbody2D.AddForce (new Vector2 (0, 100000f));
-			anim.SetBool("noChao", false);
-			anim.SetBool("Pulou", true);
-		}
 
-	}
+		movement = new Vector2 (speed.x * inputX,0);
+		anim.SetFloat("Velocidade", Mathf.Abs(speed.x * inputX) );
 
-	void FixedUpdate(){
 		anim.SetFloat( "VelocidadeV", rigidbody2D.velocity.y );
 		rigidbody2D.velocity = new Vector2 (movement.x, rigidbody2D.velocity.y);
 	}
@@ -71,10 +81,10 @@ public class playerScript : MonoBehaviour {
 		if (coll.gameObject.tag == "chao") {
 			anim.SetBool("noChao", true);
 			anim.SetBool("Pulou", false);
-			tempoPulo = 0;
-			podePulo = true;
 		}
 	}
+
+	/*
 	void OnCollisionExit2D(Collision2D coll) {
 		Debug.Log("Saiu");
 		if (coll.gameObject.tag == "chao") {
@@ -82,6 +92,7 @@ public class playerScript : MonoBehaviour {
 			podePulo = false;
 		}
 	}
+	*/
 
 	void Flip(){
 		facingRight = !facingRight;
