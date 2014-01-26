@@ -9,8 +9,10 @@ public class GroundDetector : MonoBehaviour {
 
 		if (c.tag == "chao")
 			isGrounded = true;
-		if (c.tag == "inimigo")
+		if (c.tag == "inimigo"){
+			GameObject.FindGameObjectWithTag("SoundHit").audio.Play();
 			Destroy(c.gameObject);
+		}
 
 	}
 

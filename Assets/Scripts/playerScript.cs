@@ -32,6 +32,7 @@ public class playerScript : MonoBehaviour {
 		if ( ( groundDetector_script.isGrounded /*|| !duploPulo */ ) && Input.GetKeyDown (KeyCode.Space) ) {
 			anim.SetBool("noChao", false);
 			anim.SetBool("Pulou", true);
+			GameObject.FindGameObjectWithTag("SoundJump").audio.Play();
 			rigidbody2D.AddForce ( new Vector2 (0, forcaPulo));
 
 /*			if( !duploPulo && !groundDetector_script.isGrounded ){
