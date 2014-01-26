@@ -3,47 +3,42 @@ using System.Collections;
 
 public class playerScript : MonoBehaviour {
 	public Vector2 speed = new Vector2(5,0);
-	public bool SPulo;
-	public float velocidadePulo;
-	public double tempoPulo;
-	public double tempoLimitePulo;
-	public bool podePulo;
 	private Vector2 movement;
+	public float forcaPulo = 900f;
+//	private bool duploPulo = false;
 
-
-	public float forcaPulo = 700f;
-	private bool duploPulo = false;
-
+	/* utilizada para virar o personagem*/
 	private bool facingRight = true;
 
 	private Animator anim;
 
+	/* utilizada para saber se personagem esta no chao */
 	GroundDetector groundDetector_script;
 	public GameObject groundDetector;
 
+	/* utilizada para saber o limite do cenario */
+	CameraScript camera_script;
+	public GameObject cameraObject;
+
 	void Start () {
-
 		anim = GetComponent<Animator>();
-
 		groundDetector_script = groundDetector.GetComponent<GroundDetector> ();
-
-		tempoLimitePulo = 0.3;
-		velocidadePulo = 5 * Time.deltaTime;
+		camera_script = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraScript> ();
 	}
 	
 
 	void Update () {
-
-		if ( ( groundDetector_script.isGrounded || !duploPulo ) && Input.GetKeyDown (KeyCode.Space) ) {
-			Debug.Log("Pulou");
+		/* Pulo */
+		if ( ( groundDetector_script.isGrounded /*|| !duploPulo */ ) && Input.GetKeyDown (KeyCode.Space) ) {
 			anim.SetBool("noChao", false);
 			anim.SetBool("Pulou", true);
 			rigidbody2D.AddForce ( new Vector2 (0, forcaPulo));
 
-			if( !duploPulo && !groundDetector_script.isGrounded ){
+/*			if( !duploPulo && !groundDetector_script.isGrounded ){
 				anim.SetBool("PuloDuplo", true);
 				duploPulo = true;				
 			}
+*/
 		}
 
 	}
@@ -51,19 +46,24 @@ public class playerScript : MonoBehaviour {
 	void FixedUpdate(){
 
 		float inputX = Input.GetAxis("Horizontal");
-		//		float inputY = Input.GetAxis("Vertical");
-
+/*		float inputY = Input.GetAxis("Vertical");
 		if( groundDetector_script.isGrounded || duploPulo )
 			anim.SetBool("PuloDuplo", false);
 			duploPulo = false;
+ */
 		
-		if( Input.GetKeyDown( KeyCode.LeftShift ) && inputX != 0 ){
-			speed.x = 11;
+		if( (inputX < 0 && transform.position.x > (camera_script.limiteCenarioEsquerda)) ||
+		   (inputX > 0 && transform.position.x < camera_script.limiteCenarioDireita) ){
+			if( Input.GetKey( KeyCode.LeftShift ) && inputX != 0 ){
+				speed.x = 11;
+			} else {
+				if(inputX != 0){
+					speed.x = 5;
+				}
+			}
+		} else {
+			speed.x = 0;
 		}
-		if( Input.GetKeyUp( KeyCode.LeftShift ) ){
-			speed.x = 5;
-		}
-		
 		if (inputX > 0 && !facingRight){
 			Flip();
 		}
@@ -80,7 +80,6 @@ public class playerScript : MonoBehaviour {
 	}
 	
 	void OnCollisionEnter2D(Collision2D coll) {
-		Debug.Log("Entrou");
 		if (coll.gameObject.tag == "chao") {
 			anim.SetBool("noChao", true);
 			anim.SetBool("Pulou", false);
@@ -102,5 +101,10 @@ public class playerScript : MonoBehaviour {
 		Vector3  theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;
+	}
+
+	void dentroLimiteCenario(){
+
+
 	}
 }

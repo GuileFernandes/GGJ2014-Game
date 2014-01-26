@@ -881,11 +881,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 5, y: 0}
-  SPulo: 0
-  velocidadePulo: 0
-  tempoPulo: 0
-  tempoLimitePulo: 0
-  podePulo: 0
   forcaPulo: 700
   groundDetector: {fileID: 1499951189}
 --- !u!1 &1157715529

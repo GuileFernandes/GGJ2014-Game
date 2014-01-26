@@ -21,12 +21,6 @@ public class Enemy1 : MonoBehaviour {
 			esquerda();
 	}
 
-	void OnCollisionEnter(Collision coll){
-		if (coll.gameObject.tag == "player"){
-
-		}
-	}
-
 	void direita(){
 		this.transform.rotation = new Quaternion (0, 180, 0, 0);
 		transform.position += Vector3.right * movementSpeed * Time.deltaTime;

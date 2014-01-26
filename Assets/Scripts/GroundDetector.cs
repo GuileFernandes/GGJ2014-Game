@@ -9,6 +9,8 @@ public class GroundDetector : MonoBehaviour {
 
 		if (c.tag == "chao")
 			isGrounded = true;
+		if (c.tag == "inimigo")
+			Destroy(c.gameObject);
 
 	}
 
