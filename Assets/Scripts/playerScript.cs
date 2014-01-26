@@ -10,10 +10,20 @@ public class playerScript : MonoBehaviour {
 	public bool podePulo;
 	private Vector2 movement;
 
+
+	public float forcaPulo = 700f;
+	private bool duploPulo = false;
+
+	private bool facingRight = true;
+
+	private Animator anim;
+
 	GroundDetector groundDetector_script;
 	public GameObject groundDetector;
 
 	void Start () {
+
+		anim = GetComponent<Animator>();
 
 		groundDetector_script = groundDetector.GetComponent<GroundDetector> ();
 
@@ -23,57 +33,74 @@ public class playerScript : MonoBehaviour {
 	
 
 	void Update () {
-		float inputX = Input.GetAxis("Horizontal");
-		float inputY = Input.GetAxis("Vertical");
 
-		movement = new Vector2 (speed.x * inputX,0);
+		if ( ( groundDetector_script.isGrounded || !duploPulo ) && Input.GetKeyDown (KeyCode.Space) ) {
+			Debug.Log("Pulou");
+			anim.SetBool("noChao", false);
+			anim.SetBool("Pulou", true);
+			rigidbody2D.AddForce ( new Vector2 (0, forcaPulo));
 
-		if (inputX > 0)
-			this.transform.rotation = new Quaternion (0, 0, 0, 0);
-
-		if (inputX < 0)
-			this.transform.rotation = new Quaternion (0, 180, 0, 0);
-		
-		//		this.transform.Translate (new Vector3(movement.x, 0, 0));
-
-		if (Input.GetKeyDown (KeyCode.Space) && groundDetector_script.isGrounded) {
-			rigidbody2D.AddForce(new Vector2(0, 600f));
-//			SPulo = true;
-//			transform.Translate (0, 5f, 0);
-			//podePulo = true;
+			if( !duploPulo && !groundDetector_script.isGrounded ){
+				anim.SetBool("PuloDuplo", true);
+				duploPulo = true;				
+			}
 		}
-
-/*		if (SPulo == true && tempoPulo <= tempoLimitePulo && podePulo == true) {
-						transform.Translate (0, velocidadePulo, 0);
-						tempoPulo += Time.deltaTime;
-		}
-
-/*		if (tempoPulo > tempoLimitePulo) {
-			SPulo = false;
-			podePulo = false;
-		}
-
-		if (Input.GetKeyUp (KeyCode.Space)) {
-			SPulo = false;
-		}
-*/
 
 	}
 
 	void FixedUpdate(){
+
+		float inputX = Input.GetAxis("Horizontal");
+		//		float inputY = Input.GetAxis("Vertical");
+
+		if( groundDetector_script.isGrounded || duploPulo )
+			anim.SetBool("PuloDuplo", false);
+			duploPulo = false;
+		
+		if( Input.GetKeyDown( KeyCode.LeftShift ) && inputX != 0 ){
+			speed.x = 11;
+		}
+		if( Input.GetKeyUp( KeyCode.LeftShift ) ){
+			speed.x = 5;
+		}
+		
+		if (inputX > 0 && !facingRight){
+			Flip();
+		}
+
+		if (inputX < 0 && facingRight){
+			Flip();
+		}
+
+		movement = new Vector2 (speed.x * inputX,0);
+		anim.SetFloat("Velocidade", Mathf.Abs(speed.x * inputX) );
+
+		anim.SetFloat( "VelocidadeV", rigidbody2D.velocity.y );
 		rigidbody2D.velocity = new Vector2 (movement.x, rigidbody2D.velocity.y);
 	}
 	
 	void OnCollisionEnter2D(Collision2D coll) {
+		Debug.Log("Entrou");
 		if (coll.gameObject.tag == "chao") {
-			tempoPulo = 0;
-			podePulo = true;
+			anim.SetBool("noChao", true);
+			anim.SetBool("Pulou", false);
 		}
 	}
+
+	/*
 	void OnCollisionExit2D(Collision2D coll) {
+		Debug.Log("Saiu");
 		if (coll.gameObject.tag == "chao") {
 			tempoPulo = tempoLimitePulo;
 			podePulo = false;
 		}
+	}
+	*/
+
+	void Flip(){
+		facingRight = !facingRight;
+		Vector3  theScale = transform.localScale;
+		theScale.x *= -1;
+		transform.localScale = theScale;
 	}
 }

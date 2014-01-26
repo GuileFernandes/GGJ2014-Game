@@ -1,0 +1,94 @@
+fileFormatVersion: 2
+guid: 6e5839bcb3f6dfe459cf1cf9b3a6547d
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: corpo_roxo
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 751
+        width: 644
+        height: 814
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: cabeca_roxo
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 578
+        width: 498
+        height: 408
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: braco_roxo
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 226
+        width: 181
+        height: 142
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: perna_esquerda_roxo
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 0
+        width: 256
+        height: 392
+      alignment: 0
+      pivot: {x: .5, y: .5}
+    - name: perna_direita_roxa
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 60
+        width: 264
+        height: 354
+      alignment: 0
+      pivot: {x: .5, y: .5}
+  spritePackingTag: 
+  userData: 
