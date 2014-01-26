@@ -85,6 +85,9 @@ public class playerScript : MonoBehaviour {
 			anim.SetBool("noChao", true);
 			anim.SetBool("Pulou", false);
 		}
+		if ( (coll.gameObject.tag == "bigBoss" || coll.gameObject.tag == "inimigo") && !GameObject.FindGameObjectWithTag("SoundHit").audio.isPlaying) {
+			GameObject.FindGameObjectWithTag("SoundHit").audio.Play();
+		}
 	}
 
 	/*

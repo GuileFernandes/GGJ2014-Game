@@ -637,7 +637,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 4a79a3ee3809a45488b55ddb9ea4f3e2, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .800000012
+  m_Volume: .899999976
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -812,7 +812,7 @@ GameObject:
   - 114: {fileID: 460706379}
   m_Layer: 0
   m_Name: dragaoBoss
-  m_TagString: Untagged
+  m_TagString: bigBoss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1155,6 +1155,10 @@ Prefab:
     - target: {fileID: 5000000, guid: f7e9d1a8eb045024386b9087421c3f93, type: 2}
       propertyPath: m_IsKinematic
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: f7e9d1a8eb045024386b9087421c3f93, type: 2}
+      propertyPath: m_TagString
+      value: bigBoss
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7e9d1a8eb045024386b9087421c3f93, type: 2}
@@ -4161,7 +4165,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: 0dc4e1e83bbac634a82e1b125d5b3756, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: .800000012
+  m_Volume: .699999988
   m_Pitch: 1
   Loop: 0
   Mute: 0
