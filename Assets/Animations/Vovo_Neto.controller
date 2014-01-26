@@ -242,11 +242,11 @@ Transition:
   m_TransitionDuration: 1
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 1
+  - m_ConditionMode: 2
     m_ConditionEvent: noChao
     m_EventTreshold: 0
     m_ExitTime: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: Pulou
     m_EventTreshold: 0
     m_ExitTime: 0
