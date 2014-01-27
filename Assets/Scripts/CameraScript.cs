@@ -8,7 +8,7 @@ public class CameraScript : MonoBehaviour
 	public float limiteCenarioEsquerda;
 	public float limiteCenarioDireita;
 
-	Vector3 cameraOrientationVector = new Vector3 (15, 9, -10f);
+	Vector3 cameraOrientationVector = new Vector3 (5, 9, -10f);
 	
 	
 	void Start (){
@@ -21,7 +21,7 @@ public class CameraScript : MonoBehaviour
 	void LateUpdate (){
 		float positionX = playerTransform.position.x + cameraOrientationVector.x;
 
-		if( ( playerTransform.position.x > limiteCenarioEsquerda + 4 ) &&
+		if( ( playerTransform.position.x > limiteCenarioEsquerda + 15 ) &&
 		   ( playerTransform.position.x < limiteCenarioDireita - 32 ) )
 			transform.position = new Vector3 (positionX, cameraOrientationVector.y, cameraOrientationVector.z);
 	}
